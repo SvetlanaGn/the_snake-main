@@ -57,12 +57,12 @@ class GameObject:
 class Apple(GameObject):
     """Описание объекта яблоко"""
 
-    def __init__(self, occup_pos=(), body_color: Color = APPLE_COLOR):
+    def __init__(self, occup_pos: tuple = (), body_color: Color = APPLE_COLOR):
         """Инициализация, случайное положение яблока"""
         super().__init__(body_color=body_color)
         self.randomize_position(occup_pos)
 
-    def randomize_position(self, occup_pos) -> None:
+    def randomize_position(self, occup_pos: tuple) -> None:
         """Установить случайное положение яблока"""
         while True:
             new_position = (
