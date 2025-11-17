@@ -57,10 +57,15 @@ class GameObject:
 class Apple(GameObject):
     """Описание объекта яблоко"""
 
-    def __init__(self, occup_pos: list[tuple[int]] = [],
-                 body_color: Color = APPLE_COLOR):
+    def __init__(
+            self,
+            occup_pos: list[tuple[int, int]] | None = None,
+            body_color: Color = APPLE_COLOR
+    ):
         """Инициализация, случайное положение яблока"""
         super().__init__(body_color=body_color)
+        if occup_pos is None:
+            occup_pos = []
         self.randomize_position(occup_pos)
 
     def randomize_position(self, occup_pos: list[tuple[int]]) -> None:
