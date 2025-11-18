@@ -59,7 +59,7 @@ class Apple(GameObject):
 
     def __init__(
             self,
-            occup_pos: list[tuple[int, int]] | None = None,
+            occup_pos: list[Pointer] | None = None,
             body_color: Color = APPLE_COLOR
     ):
         """Инициализация, случайное положение яблока"""
@@ -68,7 +68,7 @@ class Apple(GameObject):
             occup_pos = []
         self.randomize_position(occup_pos)
 
-    def randomize_position(self, occup_pos: list[tuple[int]]) -> None:
+    def randomize_position(self, occup_pos: list[Pointer]) -> None:
         """Установить случайное положение яблока"""
         while True:
             new_position = (
